@@ -8,5 +8,13 @@
  */
 public class SudokuBoard
 {
+    //The dimension of the board
+    public static final int SIZE = 9;
     
+    //The board itself
+    private SudokuTile[][] board;
+    
+    public SudokuBoard(){
+        board = new SudokuTile[SIZE][SIZE];
+    }
 }
