@@ -7,5 +7,8 @@
  */
 public class SudokuTile
 {
-    
+    SudokuTileValue value;
+    public SudokuTile(SudokuTileValue v){
+        this.value = v;
+    }
 }
