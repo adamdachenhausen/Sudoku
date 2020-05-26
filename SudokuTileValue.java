@@ -5,7 +5,7 @@
  * @author Adam Dachenhausen
  * @version 5/26/2020 v1.0
  */
-public class SudokuTileValue
+enum SudokuTileValue
 {
-    
+    ONE,TWO,THREE,FOUR,FIVE,SIX,SEVEN,EIGHT,NINE,X
 }
