@@ -1,6 +1,7 @@
-
+import java.util.List;
+import java.util.ArrayList;
 /**
- * A collection of SudukoTiles arranged in a standard Sudoku layout.
+ * A collection of SudokuHouses arranged in a standard Sudoku layout.
  * @see https://en.wikipedia.org/wiki/Sudoku
  *
  * @author Adam Dachenhausen
@@ -9,12 +10,33 @@
 public class SudokuBoard
 {
     //The dimension of the board
-    public static final int SIZE = 9;
-    
+    public static final int SIZE = 3;
+
     //The board itself
-    private SudokuTile[][] board;
-    
+    private SudokuHouse[][] board;
+
     public SudokuBoard(){
-        board = new SudokuTile[SIZE][SIZE];
+        board = new SudokuHouse[SIZE][SIZE];
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                board[i][j] = new SudokuHouse();
+            }
+        }
+    }
+
+    /** Returns a List of the SudokuHouses countained in board,
+     *  so that the user can easily iterate through them
+     * 
+     */
+    public List getBoard(){
+        List output = new ArrayList<SudokuHouse>();
+        
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                output.add(board[i][j]);
+            }
+        }
+
+        return output;
     }
 }
