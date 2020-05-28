@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Color;
+import java.util.List;
 /**
  * JFrame that represents the Sudoku, and allows the user to enter numbers
  *
@@ -33,6 +34,8 @@ public class Sudoku extends MouseAdapter implements Runnable
     public static final Point lineX2End = new Point(FRAME_WIDTH,(2*FRAME_HEIGHT)/3);
 
     private JPanel panel;
+    
+    private SudokuBoard board;
     public void run(){
         //Window Init
         JFrame frame = new JFrame("Sudoku");
@@ -41,6 +44,9 @@ public class Sudoku extends MouseAdapter implements Runnable
         frame.setPreferredSize(new Dimension(FRAME_WIDTH,FRAME_HEIGHT));
         frame.setResizable(false);
 
+        //Create the inner board that we will work with
+        board = new SudokuBoard();
+        
         panel = new JPanel(){
             @Override
             public void paintComponent(Graphics g){
@@ -66,7 +72,6 @@ public class Sudoku extends MouseAdapter implements Runnable
                 g.drawLine(lineX2Start.x,lineX2Start.y+1,lineX2End.x,lineX2End.y+1);
             }
         };
-
         frame.add(panel);
 
         //Display window
@@ -74,6 +79,14 @@ public class Sudoku extends MouseAdapter implements Runnable
         frame.setVisible(true);
     }
 
+    public void addBoard(){
+        List<SudokuHouse> l = board.getBoard();
+        
+        for(SudokuHouse h : l){
+            
+        }
+    }
+    
     public static void main(String[] args){
         javax.swing.SwingUtilities.invokeLater(new Sudoku());
     }
