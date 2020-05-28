@@ -8,6 +8,7 @@
 public class SudokuTile
 {
     public static final SudokuTileValue DEFAULT = SudokuTileValue.X;
+    
     protected SudokuTileValue value;
     public SudokuTile(SudokuTileValue v){
         this.value = v;
