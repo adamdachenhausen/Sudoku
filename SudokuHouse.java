@@ -15,5 +15,10 @@ public class SudokuHouse
     
     public SudokuHouse(){
         board = new SudokuTile[SIZE][SIZE];
+        for(int i = 0; i < SIZE; i++){
+            for(int j = 0; j < SIZE; j++){
+                board[i][j] = new SudokuTile(SudokuTile.DEFAULT);
+            }
+        }
     }
 }
